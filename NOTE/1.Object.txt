@@ -1,0 +1,37 @@
+KHỞI TẠO ĐỐI TƯỢNG
+	---
+	1) Khởi tạo cố định
+	var person = {
+		name: "John",
+		age: 42,
+		favColor: "green"
+	};
+	---
+	2) Khởi tạo bằng hàm tạo
+	function person(name, age, color) {         // Hàm khởi tạo
+	  this.name = name;                         // this tham khảo đến đối tượng cần tạo
+	  this.age = age;
+	  this.favColor = color;
+	}
+	var p1 = new person("John", 42, "green");   // tạo đối tượng
+	var p2 = new person("Amy", 21, "red");      // tạo đối tượng
+	document.write(p1.age);                     // Outputs 42
+	document.write(p2.name);                    // Outputs "Amy"
+__________________________________________________________________________________________
+SETTER VÀ GETTER
+	 function person(age) {
+		this.age = 0;
+		Object.defineProperty(this, 'ageInfo', {
+			set : function (age) {
+				console.log('setter - ' + age);
+				this.age = age;
+			},
+			get : function () {
+				console.log('getter');
+				return "Thông tin tuổi: " + this.age;
+			}
+		});
+	 }
+	var obj = new person(0);
+	obj.ageInfo = 25;
+	alert(obj.ageInfo);

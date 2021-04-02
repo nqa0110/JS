@@ -1,0 +1,38 @@
+0/ THUỘC TÍNH HTML
+width	Thuộc tính kích thước
+align	Thuộc tính canh lề
+________________________________________________________________________________________________________
+1/ THUỘC TÍNH TOÀN CỤC
+accesskey 		: thiết lập phím tắt kích hoạt
+class			: thiết lập lớp (CSS) cho phần tử
+contenteditable	: thiết lập lớp (CSS) cho phần tử
+data-*			: thiết lập dữ liệu riêng cho phần tử, quy định thống nhất đặt tên với tiền tố data-
+draggable		: cho phép kéo/thả
+hidden			: ẩn phần tử
+id				: gán id (tên duy nhất) cho phần tử, để chọn phần tử, để thiết lập CSS
+spellcheck		: thiết lập kiểm tra ngữ pháp
+style			: Định nghĩa CSS trực tiếp trong phần tử
+title			: tiêu đề phần tử (hiện thị khi chuột dừng trên phần tử)
+________________________________________________________________________________________________________
+VD: SET THUỘC TÍNH HREF
+
+	<a href="http://www.example.com">Some link</a>
+
+	<script>
+		var el = document.getElementsByTagName("a");
+		el[0].href = "https://xuanthulab.net";
+	</script>
+	
+VD: ĐỔI CSS
+	<div id="demo" style="width:200px">Nội dung Ví dụ</div>
+
+	<script>
+	  var x = document.getElementById("demo");
+	  x.style.color = "6600FF";
+	  x.style.width = "100px";
+	</script>
+________________________________________________________________________________________________________
+3/ Thêm id hoặc Class
+yourelement.setAttribute("id", "yourid");
+
+yourelement.classList.add("your-class")

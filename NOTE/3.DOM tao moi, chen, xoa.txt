@@ -1,0 +1,65 @@
+1/ Tạo phần tử
+	document.createElement(tag_name)	tạo ra phần tử có thẻ tag_name như a, p, div ...
+	element.cloneNode()	Tạo ra một phần tử bằng cách nhân bản phần tử chỉ ra (element)
+	document.createTextNode(text)	tạo phần tử tử văn bản text HTML
+VD:
+    <div id="demo">nội dung ví dụ</div>
+    <button onclick="add_child()">KẾT QUẢ</button>
+    <script>
+        function add_child() {
+            //tạo phần tử p    
+            var p = document.createElement("p");
+            //tạo phần tử text
+            var node = document.createTextNode("Some new text");
+            //gắn node vào p
+            p.appendChild(node);
+            //Thay đổi một số thuộc tính của p
+            p.style.backgroundColor = 'red';
+            p.style.padding = "10px";
+            p.style.color = "white";
+            var div = document.getElementById("demo");
+            //gắn p vào div
+            div.appendChild(p);
+        }
+    </script>
+_____________________________________________________________________________________________
+2/ Xóa phần tử
+	Cách 1: Để loại bỏ phần tử HTML -> chọn phần tử cha rồi sử dụng phương thức removeChild(node)
+	VD:
+		<div id="demo">
+			<p id="p1">This is a paragraph.</p>
+			<p id="p2">This is another paragraph.</p>
+		</div>
+		<script>
+			var parent = document.getElementById("demo");
+			var child = document.getElementById("p1");
+			parent.removeChild(child);
+		</script>
+		
+	Cách 2: sử dụng thủ thuật lấy thuộc tính parentNode để bỏ qua bước tìm phần tử cha trong DOM
+	VD:
+		<div id="demo">
+		  <p id="p1">This is a paragraph.</p>
+		  <p id="p2">This is another paragraph.</p>
+		</div>
+		<script>
+			var child = document.getElementById("p1");
+			child.parentNode.removeChild(child);
+		</script>
+_____________________________________________________________________________________________
+3/ Thay thế phần tử
+	Để thay thể một phần tử bằng một phần tử khác dùng cú pháp element.replaceChild(newNode, oldNode)
+	Trong đó element là nút cha
+	VD:
+	<div id="demo">
+		<p id="p1">This is a paragraph.</p>
+		<p id="p2">This is another paragraph.</p>
+	</div>
+	<script>
+		var p = document.createElement("p");
+		p.innerText = 'Đây là đoạn văn mới tạo ra';
+		var parent = document.getElementById("demo");
+		var child = document.getElementById("p1");
+		parent.replaceChild(p, child);
+	</script>
+_____________________________________________________________________________________________

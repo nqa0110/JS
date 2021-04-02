@@ -1,0 +1,30 @@
+1/ CHỌN PHẦN TỬ TRONG DOM
+	document.getElementById(id)				//tìm 1 phần tử theo id của nó - trả về HTMLElement hoặc null nếu không thấy
+	document.getElementsByClassName(name)	//tìm các phần tử theo class - trả về HTMLCollection (collection like array)
+	document.getElementsByTagName(name)		//tìm các phần tử theo tên thẻ - trả về HTMLCollection (collection like array)
+_____________________________________________________________________________________________________
+2/ Get & Set
+	Thuộc tính innerHTML có trong mọi phần tử, sử dụng nó để thay đổi nội dung trong phần tử
+	VD: Get
+		<div id="demo">Demo select Element</div>
+		<script>
+            var ele = document.getElementById('demo');
+            console.log(ele.innerHTML);
+        </script>
+		
+	VD: Set
+	    <div id="demo">Demo select Element</div>
+		<script>
+            var ele = document.getElementById('demo');
+            ele.innerHTML = "Hello World!";
+        </script>
+_____________________________________________________________________________________________________
+3/ Phần tử trong DOM - HTMLElement
+
+	element.childNodes : trả về mảng các phần tử con của nó
+	element.firstChild : phần tử con đầu tiên
+	element.lastChild : phần tử con cuối cùng
+	element.hasChildNodes : trả về true nếu có phần tử con, ngược lại là false
+	element.nextSibling : phần tử cùng cấp tiếp theo
+	element.previousSibling : phần tử cùng cấp trước
+	element.parentNode : trả về nút cha
